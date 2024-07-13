@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Head from "@/components/head"
 import List from "@/components/list"
 import { Inconsolata } from "next/font/google";
