@@ -1,5 +1,5 @@
 import { Inconsolata } from "next/font/google";
-import Array from "./arrayfunc";
+import Tree from "./TreeFunc";
 
 const inconsolata = Inconsolata({
   weight : '400',
@@ -9,7 +9,7 @@ const inconsolata = Inconsolata({
 export default function Home() {
   return (
     <main className={inconsolata.className}>
-      <Array/>
+      <Tree/>
     </main>
   );
 }
