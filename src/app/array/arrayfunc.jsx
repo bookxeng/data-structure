@@ -1,32 +1,38 @@
 'use client'
-
-import React from 'react'
+import React, { useState } from 'react'
 import { submitForm } from './action'
 
-export default function Array ()  {
 
+
+export default function Array ()  {
+  const [inputValue, setInputValue] = useState('')
+  const [ arrayRepresent, setArrayRepresent ] = useState([])
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value)
+  }
+
+  const handleParseArray = () => {
+    const ParsedArray = inputValue.split(',').map((item) => item.trim());
+    console.log(ParsedArray)
+    setArrayRepresent(ParsedArray)
+
+
+  }
   return (
     <div className='w-full min-h-screen bg-white'>
-        <div className='text-black text-5xl font-extrabold max-w-[1000px] mx-auto py-12 justify-center flex'>
+        <div className='text-black text-5xl font-extrabold max-w-[1000px]  mx-auto py-12 justify-center flex'>
             Array
         </div>
-        <div className='max-w-[1000px] mx-auto flex'>
-        <form action={submitForm} className=''>
-          Input:&emsp; 
-          <input name='array' className='border-2 border-black' placeholder='type an array'/>
-          <button className=' border-2 border-black mx-2 hover:border-dotted shadow-md'><span className='mx-1'>Submit</span></button>
-        </form>
+        <div className='w-full text-black bg-white max-w-[1000px] py-4 mx-auto flex justify-center'>
+          <input placeholder='type an input' className='border-black border' type='text' value={inputValue} onChange={handleInputChange} />
+          <button className='mx-2 px-1 border-black border' onClick={handleParseArray}  >Click me</button>
         </div>
-        <div className='text-center justify-center flex py-12'>
-          <table className='border-separate border-black border-4 border-spacing-2'>
-            <tbody>
-            <tr className='text-4xl font-extrabold text-black'>
-              <td className=' border-black border-2'>1</td>
-              <td className=' border-black border-2'>2</td>
-              <td className=' border-black border-2'>200</td>
-            </tr>
-            </tbody>
-          </table>
+
+        <div className='w-full py-8 bg-white text-black max-w-[1000px] justify-center flex mx-auto'>
+          {arrayRepresent.map((item, index) => (
+            <span key={index} className='border-black border-2 mx-2 px-1 font-extrabold text-2xl' > {item} </span>
+          ))}
         </div>
     </div>
   )
