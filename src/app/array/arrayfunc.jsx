@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import { submitForm } from './action'
 
 
 
@@ -14,7 +13,6 @@ export default function Array ()  {
 
   const handleParseArray = () => {
     const ParsedArray = inputValue.split(',').map((item) => item.trim());
-    console.log(ParsedArray)
     setArrayRepresent(ParsedArray)
 
 
