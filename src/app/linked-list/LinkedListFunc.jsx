@@ -27,13 +27,13 @@ export default function Linked ()  {
         </div>
         <div className='max-w-[1000px] mx-auto flex justify-center text-2xl text-black py-8'>
             {arrayRepresent.map((item, index) => (
-              <div>
+              <div key={index}>
               <span key={index} className='text-black border-separate border-black border-2 mx-2 px-1'> 
                 {item} 
-                <span className='border-black border-l-2 ml-2 px-1 font-extrabold'>
+                <span key={index} className='border-black border-l-2 ml-2 px-1 font-extrabold'>
                 ·
                 </span>
-              </span>
+              </span >
               →
               </div>
             ))}
