@@ -24,7 +24,7 @@ export default function Array ()  {
         </div>
         <div className='w-full text-black bg-white max-w-[1000px] py-4 mx-auto flex justify-center'>
           <input placeholder='type an input' className='border-black border' type='text' value={inputValue} onChange={handleInputChange} />
-          <button className='mx-2 px-1 border-black border hover:text-blue-500' onClick={handleParseArray}  >Click me</button>
+          <button className='mx-2 px-1 border-black border bg-gray-300 hover:bg-gray-700' onClick={handleParseArray}  >Click me</button>
         </div>
 
         <div className='w-full py-8 bg-white text-black max-w-[1000px] justify-center flex mx-auto'>
