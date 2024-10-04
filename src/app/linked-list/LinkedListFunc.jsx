@@ -11,7 +11,7 @@ export default function Linked ()  {
   }
 
   const handleParseArray = () =>{
-    const ParsedArray = inputValue.split(',').map((item) => item.trim(''))
+    const ParsedArray = inputValue.split(',').map((item) => item.trim(' '))
     setArrayRepresent(ParsedArray)
   }
   
